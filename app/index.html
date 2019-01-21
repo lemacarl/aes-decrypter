@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="AES Decrypter">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="AES Decrypter">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Materialize stylesheet-->
+    <link rel="stylesheet" href="styles/materialize.min.css">    
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">    
+  </head>
+  <body>
+    <!-- Add your site or app content here -->
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m10 push-m1 l8 push-l2 xl6 push-xl3">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">AES Decrypter</span>
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>File</span>
+                    <input id="file-upload" type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input id="file-name" class="file-path validate" type="text" placeholder="Select a file.">
+                  </div>
+                </div>
+                <div>
+                  <label>Input Type</label>
+                  <p>
+                    <label>
+                        <input name="input-type" type="radio" checked value="hex" />
+                        <span>Hex</span>
+                    </label>
+                    <label>
+                        <input name="input-type" type="radio" value="b64"/>
+                        <span>B64</span>
+                    </label>
+                    <label>
+                        <input name="input-type" type="radio" value="utf-8"/>
+                        <span>UTF-8</span>
+                    </label>
+                  </p>
+                </div>
+                <div class="input-field">
+                  <label for="password">Password</label>
+                  <input id="password" type="password" class="validate">
+                </div>
+                <div class="input-field">
+                  <button id="btn-decrypt" class="btn">Decrypt</button>
+                </div>
+              </form>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a id="download"></a>
+
+    <!-- build:js scripts/main.min.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/mode-ecb.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/lib-typedarrays.js"></script>
+    <script src="scripts/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- Built with love using Web Starter Kit -->
+  </body>
+</html>
